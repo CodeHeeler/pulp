@@ -25,6 +25,10 @@ class ContentSerializer(base.MasterModelSerializer):
                     "'http://localhost/full_artifact_path'}"),
     )
 
+    def validate(self, data):
+        data['_href']
+        return data
+
     class Meta:
         model = models.Content
         fields = base.MasterModelSerializer.Meta.fields + ('notes', 'artifacts')
